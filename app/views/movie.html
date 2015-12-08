@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <form class="navbar-form" role="search" ng-submit="searchApi()">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="movie" placeholder="Movie Title">
+    </div>
+    <button type="submit" class="btn btn-lg btn-success">Brew</button>
+  </form>
+  <h1>Brew The Movie!!!</h1>
+  <p class="lead">
+    {{movieData}}
+    <p>Tomatometer: {{tomatometer}}</p>
+  </p>
+</div>

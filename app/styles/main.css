@@ -10,6 +10,19 @@
 
 body {
   padding: 0;
+  background: url('../images/brewery.jpeg');
+  background-size: cover;
+}
+
+.navbar-default .navbar-brand {
+  font-family: 'Orbitron';
+  font-size: 30px;
+  color: darkred;
+  text-shadow: 1px 1px teal;
+}
+
+.navbar {
+  margin-bottom: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -86,4 +99,5 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
 }
