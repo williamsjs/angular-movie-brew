@@ -8,20 +8,8 @@
  * Controller of the movieBrewApp
  */
 angular.module('movieBrewApp')
-  .controller('MovieCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('MovieCtrl', ['$scope', 'Movies', function($scope, Movies) {
 
-    $scope.movieData = "";
-    $scope.tomatometer = "";
-
-    $scope.searchApi = function() {
-      if ($scope.movie) {
-        var path = "http://www.omdbapi.com/?t=" + $scope.movie + "&tomatoes=true";
-        $http.get(path).success(function(data) {
-          $scope.movieData = data.Year + " " + data.Title   ;
-          $scope.tomatometer = data.tomatoMeter + "%";
-        });
-        $scope.movie = '';
-      };
-    };
+    $scope.movieData = Movies.getFoo();
 
   }]);

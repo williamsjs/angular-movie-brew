@@ -10,8 +10,12 @@
 
 body {
   padding: 0;
-  background: url('../images/brewery.jpeg');
+  background: url('../images/brewery.jpeg') no-repeat;
   background-size: cover;
+}
+
+i.fa-beer {
+  color: black;
 }
 
 .navbar-default .navbar-brand {
