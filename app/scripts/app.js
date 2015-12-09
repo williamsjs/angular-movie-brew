@@ -30,7 +30,7 @@ angular
         url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
+      });
 
     $urlRouterProvider.otherwise('/movie');
 

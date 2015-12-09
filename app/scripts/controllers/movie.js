@@ -10,6 +10,11 @@
 angular.module('movieBrewApp')
   .controller('MovieCtrl', ['$scope', 'Movies', function($scope, Movies) {
 
-    $scope.movieData = Movies.getFoo();
+    $scope.movie = {};
+
+    $scope.searchApi = function() {
+      $scope.movie = Movies.getMovie($scope.title);
+    };
+
 
   }]);
