@@ -8,8 +8,20 @@
     </div>
     <button type="submit" class="btn btn-lg btn-success">Brew</button>
   </form>
+  <form class="navbar-form" role="search" ng-submit="searchMovies()">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="titles" placeholder="Movie Title">
+    </div>
+    <button type="submit" class="btn btn-lg btn-success">Brew</button>
+  </form>
   <p class="lead">
     {{movie}}
-    <p>Tomatometer: </p>
+    <p>Title: {{movie.Title}} ({{movie.Year}})</p>
+    <p>Tomatometer: {{movie.tomatoMeter}}%</p>
   </p>
+  <ul>
+    <li ng-repeat="movie in movies">
+      {{movie.Title}} ({{movie.Year}})
+    </li>
+  </ul>
 </div>
