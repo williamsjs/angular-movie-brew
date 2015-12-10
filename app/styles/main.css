@@ -18,6 +18,10 @@ i.fa-beer {
   color: black;
 }
 
+li {
+  list-style-type: none;
+}
+
 .navbar-default .navbar-brand {
   font-family: 'Orbitron';
   font-size: 30px;

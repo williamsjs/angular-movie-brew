@@ -13,13 +13,19 @@ angular.module('movieBrewApp')
     $scope.movie = {};
     $scope.movies = [];
 
-    $scope.searchApi = function() {
-      $scope.movie = Movies.getMovie($scope.title);
+    $scope.getMovie = function(title, year) {
+      Movies.getMovie(title, year).then(function(movie) {
+        $scope.movie = movie;
+      });
     };
 
     $scope.searchMovies = function() {
       Movies.searchMovie($scope.titles).then(function(movies) {
-        $scope.movies = movies.Search;
+        if (movies.Search == undefined) {
+          $scope.movies = false;
+        } else {
+          $scope.movies = movies.Search;
+        }
       });
     }
 
