@@ -14,7 +14,7 @@ angular.module('movieBrewApp')
     this.searchMovie = function(title) {
       title = title.split(' ').join('+');
       console.log(title);
-      return Restangular.oneUrl('movies', 'http://omdbapi.com/?s=' + title).get();
+      return Restangular.oneUrl('movies', searchPath + title).get();
     }
 
   }]);

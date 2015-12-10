@@ -9,11 +9,11 @@
   </div>
   <p class="lead">
   </p>
-  <ul ng-if="movies">
+  <ul ng-if="movies" toggle>
     <li ng-repeat="movie in movies">
       <button ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
     </li>
   </ul>
 
-  <h1>{{movie}}</h1>
+  <li ng-if="movie">{{movie.Title}} ({{movie.Year}})</li>
 </div>
