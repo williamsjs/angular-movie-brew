@@ -21,6 +21,7 @@ angular.module('movieBrewApp')
 
     $scope.searchMovies = function() {
       $scope.movies = false;
+      $scope.movie = false;
       Movies.searchMovie($scope.titles).then(function(movies) {
         if (movies.Search != undefined) {
           $scope.movies = movies.Search;

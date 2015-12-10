@@ -9,11 +9,13 @@
   </div>
   <p class="lead">
   </p>
-  <ul ng-if="movies" toggle>
-    <li ng-repeat="movie in movies">
-      <button ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
-    </li>
-  </ul>
+  <div class="row">
+    <ul ng-if="movies" class="col-md-12" toggle>
+      <li ng-repeat="movie in movies">
+        <button ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
+      </li>
+    </ul>
+  </div>
 
   <li ng-if="movie">{{movie.Title}} ({{movie.Year}})</li>
 </div>
