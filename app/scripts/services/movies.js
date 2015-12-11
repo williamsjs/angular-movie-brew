@@ -8,7 +8,9 @@ angular.module('movieBrewApp')
     var tomatoes = "&tomatoes=true"
 
     this.getMovie = function(title, year) {
-      return Restangular.oneUrl('movie', path + title + tomatoes + '&y=' + year).get();
+      var movie = Restangular.oneUrl('movie', path + title + tomatoes + '&y=' + year).get();
+      // TODO create beer factory and implement api
+      return movie;
     };
 
     this.searchMovie = function(title) {
