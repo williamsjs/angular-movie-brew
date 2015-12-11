@@ -4,18 +4,15 @@
       <div class="form-group col-md-6 col-md-offset-3">
         <input type="text" class="form-control" ng-model="titles" placeholder="Movie Title">
       </div>
-      <button type="submit" class="btn btn-lg btn-success col-md-6 col-md-offset-3">Brew</button>
+      <button type="submit" class="btn btn-lg btn-success col-md-6 col-md-offset-3">Search</button>
     </form>
   </div>
   <p class="lead">
   </p>
+
   <div class="row">
-    <ul ng-if="movies" class="col-md-12" toggle>
-      <li ng-repeat="movie in movies">
-        <button ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
-      </li>
-    </ul>
+    <movie-slide-down></movie-slide-down>
   </div>
 
-  <li ng-if="movie">{{movie.Title}} ({{movie.Year}})</li>
+  <p ng-if="movie.Title">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</p>
 </div>

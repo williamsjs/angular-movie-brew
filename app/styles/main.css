@@ -47,14 +47,22 @@ li {
   margin-bottom: 10px;
 
   /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
 }
 
+.animate-repeat.ng-enter{
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -75,8 +83,6 @@ li {
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
-
-
 }
 
 /* Responsive: Portrait tablets and up */

@@ -8,10 +8,10 @@
  * Controller of the movieBrewApp
  */
 angular.module('movieBrewApp')
-  .controller('MovieCtrl', ['$scope', 'Movies', function($scope, Movies) {
+  .controller('MovieCtrl', ['$scope', '$timeout', 'Movies', function($scope, $timeout, Movies) {
 
-    $scope.movie = false;
-    $scope.movies = false;
+    $scope.movie = {};
+    $scope.movies = {};
 
     $scope.getMovie = function(title, year) {
       Movies.getMovie(title, year).then(function(movie) {
@@ -20,14 +20,17 @@ angular.module('movieBrewApp')
     };
 
     $scope.searchMovies = function() {
-      $scope.movies = false;
-      $scope.movie = false;
+      $scope.movies = {};
+      $scope.movie = {};
       Movies.searchMovie($scope.titles).then(function(movies) {
         if (movies.Search != undefined) {
-          $scope.movies = movies.Search;
+          $timeout(function() {
+            $scope.movies = movies.Search;
+          });
+        } else {
+          $scope.movie.Title = "No Movie Found";
         }
       });
-      $scope.$broadcast('event:toggle');
     }
 
 

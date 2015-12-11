@@ -13,7 +13,6 @@ angular.module('movieBrewApp')
 
     this.searchMovie = function(title) {
       title = title.split(' ').join('+');
-      console.log(title);
       return Restangular.oneUrl('movies', searchPath + title).get();
     }
 

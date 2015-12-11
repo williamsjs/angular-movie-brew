@@ -1,0 +1,5 @@
+<ul ng-if="movies" class="col-md-12">
+  <li ng-repeat="movie in movies" class="animate-repeat">
+    <button class="btn btn-default" ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
+  </li>
+</ul>
