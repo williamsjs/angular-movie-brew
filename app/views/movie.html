@@ -11,12 +11,11 @@
   </p>
 
   <div class="row">
-    <ul ng-if="movies" class="col-md-12" data-movie-slide-down="{{movies}}">
+    <ul ng-if="movies" class="col-md-12" data-movie-slide-down="{{movies}}" id="movie-list">
       <li ng-repeat="movie in movies">
         <button class="btn btn-default" ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
       </li>
     </ul>
+    <p ng-if="movie.Title" data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</p>
   </div>
-
-  <p ng-if="movie.Title">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</p>
 </div>
