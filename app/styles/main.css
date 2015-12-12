@@ -109,3 +109,30 @@ li {
   }
 
 }
+
+div#beer-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+}
+
+div#gif {
+  background-image: url('../images/chappelle-beer.gif');
+  background-repeat: no-repeat;
+  height: 40%;
+  width: 95%;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+@media (min-width: 750px) {
+  div#gif {
+    height: 50%;
+    width: 50%;
+  }
+}
