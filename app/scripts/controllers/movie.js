@@ -14,9 +14,7 @@ angular.module('movieBrewApp')
     $scope.movies = null;
 
     $scope.getMovie = function(title, year) {
-      $scope.movie = Movies.getMovie(title, year).then(function(movie) {
-        $scope.movie = movie;
-      });
+      $scope.movie = Movies.getMovie(title, year);
     };
 
     $scope.searchMovies = function() {
@@ -24,9 +22,10 @@ angular.module('movieBrewApp')
       $scope.movie = null;
       Movies.searchMovie($scope.titles).then(function(movies) {
         if (movies.Search != undefined) {
-          $scope.movies = movies.Search;
+          var fullList = movies.Search;
+          $scope.movies = Movies.filterMovies(fullList);
         } else {
-          $scope.movie.Title = "No Movie Found";
+          $scope.movie = {Title: "No Movie Found"};
         }
       });
     }

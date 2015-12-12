@@ -16,6 +16,9 @@
         <button class="btn btn-default" ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
       </li>
     </ul>
-    <p ng-if="movie.Title" data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</p>
+    <div ng-if="movie.Title">
+      <p data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</p>
+      <button class="btn btn-default"><i class='fa fa-beer'></i> Brew</button>
+    </div>
   </div>
 </div>
