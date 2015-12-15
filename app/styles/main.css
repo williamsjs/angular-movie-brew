@@ -14,6 +14,27 @@ body {
   background-size: cover;
 }
 
+button.close {
+  margin-right: 25px;
+  margin-top: 25px;
+  width: 50px
+  height: 50px;
+  color: red;
+  opacity: 1;
+}
+
+div#exit {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.form-group input[type="text"] {
+  border-radius: 50px;
+  border: 2px solid black;
+  font-size: 4rem;
+  height: 100px;
+  text-align: center;
+}
+
 i.fa-beer {
   color: black;
 }
@@ -67,7 +88,6 @@ li {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
   border-top: 1px solid #e5e5e5;
 }
 
@@ -78,6 +98,7 @@ li {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
+  border: 2.5px solid black;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -90,6 +111,19 @@ li {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
+  }
+
+  .form-group input[type="text"] {
+    border-radius: 50px;
+    border: 2px solid black;
+    font-size: 4rem;
+    height: 100px;
+    text-align: center;
+  }
+
+  button.search {
+    margin-top: 38px;
+    width: 300px;
   }
 
   /* Remove the padding we set earlier */
@@ -119,11 +153,17 @@ div#beer-overlay {
   left: 0;
 }
 
+div#overlay-timeout {
+  height: 100%;
+  width: 100%;
+}
+
 div#gif {
   background-repeat: no-repeat;
   height: 40%;
   width: 95%;
   margin: auto;
+  margin-top: 100px;
   border: 3px solid black;
   border-radius: 5px;
   background-size: cover;

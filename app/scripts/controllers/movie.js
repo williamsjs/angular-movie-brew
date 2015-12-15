@@ -14,9 +14,13 @@ angular.module('movieBrewApp')
     $scope.movies = null;
     $scope.beer = false;
 
-    $scope.setBeer = function() { $scope.beer = "Coors"};
+    $scope.setBeer = function() {
+      $scope.beer = "Coors"
+    };
 
-    $scope.exitBeer = function() { $scope.beer = false };
+    $scope.exitBeer = function() {
+      $scope.beer = false
+    };
 
     $scope.getMovie = function(title, year) {
       $scope.movie = Movies.getMovie(title, year);

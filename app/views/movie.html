@@ -1,10 +1,10 @@
 <div class="jumbotron">
   <div class="row text-center">
     <form class="navbar-form" role="search" ng-submit="searchMovies()">
-      <div class="form-group col-md-6 col-md-offset-3">
+      <div class="form-group col-md-8 col-md-offset-1">
         <input type="text" class="form-control" ng-model="titles" placeholder="Movie Title">
       </div>
-      <button type="submit" class="btn btn-lg btn-success col-md-6 col-md-offset-3">Search</button>
+      <button type="submit" class="search btn btn-lg btn-success col-md-12 col-md-offset-3"><i class="fa fa-search"></i> Search</button>
     </form>
   </div>
   <p class="lead">
@@ -18,7 +18,7 @@
     </ul>
     <div ng-if="movie.Title">
       <p data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</p>
-      <button class="btn btn-default" ng-click="setBeer()"><i class='fa fa-beer'></i> Brew</button>
+      <button ng-if="movie.Year" class="btn btn-default" ng-click="setBeer()"><i class='fa fa-beer'></i> Brew</button>
     </div>
   </div>
 
