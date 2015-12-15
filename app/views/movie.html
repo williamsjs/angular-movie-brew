@@ -7,8 +7,8 @@
       <button type="submit" class="search btn btn-lg btn-success col-md-12 col-md-offset-3"><i class="fa fa-search"></i> Search</button>
     </form>
   </div>
-  <p class="lead">
-  </p>
+
+
 
   <div class="row">
     <ul ng-if="movies" class="col-md-12" data-movie-slide-down="{{movies}}" id="movie-list">
@@ -17,8 +17,15 @@
       </li>
     </ul>
     <div ng-if="movie.Title">
-      <p data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</p>
-      <button ng-if="movie.Year" class="btn btn-default" ng-click="setBeer()"><i class='fa fa-beer'></i> Brew</button>
+      <div id="movie-card">
+        <h4 data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{movie.tomatoMeter}}" aria-valuemin="0" aria-valuemax="{{movie.tomatoMeter}}" style="width: {{movie.tomatoMeter}}%; height: 100px; background-color: red; border: 1px solid black">
+              TomatoMeter Score: {{movie.tomatoMeter}}%
+            </div>
+          </div>
+        <button ng-if="movie.Year" class="btn btn-lg col-md-12 col-md-offset-3 brew" ng-click="setBeer()"><i class='fa fa-beer'></i> Brew</button>
+      </div>
     </div>
   </div>
 
