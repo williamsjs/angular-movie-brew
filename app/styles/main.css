@@ -120,7 +120,6 @@ div#beer-overlay {
 }
 
 div#gif {
-  background-image: url('../images/chappelle-beer.gif');
   background-repeat: no-repeat;
   height: 40%;
   width: 95%;
