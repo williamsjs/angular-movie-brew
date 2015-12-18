@@ -8,14 +8,17 @@
  * Controller of the movieBrewApp
  */
 angular.module('movieBrewApp')
-  .controller('MovieCtrl', ['$scope', '$timeout', 'Movies', function($scope, $timeout, Movies) {
+  .controller('MovieCtrl', ['$scope', '$timeout', 'Movies', 'Beers', function($scope, $timeout, Movies, Beers) {
 
     $scope.movie = null;
     $scope.movies = null;
     $scope.beer = false;
 
     $scope.setBeer = function() {
-      $scope.beer = "Coors"
+      $scope.beer = Beers.brew($scope.movie.imdbRating).then(function(beers) {
+        $scope.beer = beers;
+        console.log(beers.response.beers[0].beer.beer_abv);
+      });
     };
 
     $scope.exitBeer = function() {

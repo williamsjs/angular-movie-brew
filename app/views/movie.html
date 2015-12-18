@@ -7,24 +7,32 @@
       <button type="submit" class="search btn btn-lg btn-success col-md-12 col-md-offset-3"><i class="fa fa-search"></i> Search</button>
     </form>
   </div>
-
-
-
   <div class="row">
     <ul ng-if="movies" class="col-md-12" data-movie-slide-down="{{movies}}" id="movie-list">
       <li ng-repeat="movie in movies">
-        <button class="btn btn-default" ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
+        <button class="btn btn-default movie-list" ng-click="getMovie(movie.Title, movie.Year)">{{movie.Title}} ({{movie.Year}})</button>
       </li>
     </ul>
     <div ng-if="movie.Title">
       <div id="movie-card">
         <h4 data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</h4>
+        <div ng-if="movie.Year">
+          <p class="actors"><span>Actors: </span>{{movie.Actors}}</p>
+          <p class="plot"><span>Description: </span>{{movie.Plot}}</p>
+          <p>TomatoMeter Score: </p>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{movie.tomatoMeter}}" aria-valuemin="0" aria-valuemax="{{movie.tomatoMeter}}" style="width: {{movie.tomatoMeter}}%; height: 100px; background-color: red; border: 1px solid black">
-              TomatoMeter Score: {{movie.tomatoMeter}}%
+            <div class="progress-bar progress-bar-striped tomato" role="progressbar" aria-valuenow="{{movie.tomatoMeter}}" aria-valuemin="0" aria-valuemax="{{movie.tomatoMeter}}" style="width: {{movie.tomatoMeter}}%;">
+              {{movie.tomatoMeter}}%
             </div>
           </div>
-        <button ng-if="movie.Year" class="btn btn-lg col-md-12 col-md-offset-3 brew" ng-click="setBeer()"><i class='fa fa-beer'></i> Brew</button>
+          <p>IMDB Score: </p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped imdb" role="progressbar" aria-valuenow="{{movie.imdbRating * 10 }}" aria-valuemin="0" aria-valuemax="{{movie.imdbRating * 10}}" style="width: {{movie.imdbRating * 10}}%;">
+              {{movie.imdbRating}}%
+            </div>
+          </div>
+          <button class="btn btn-lg col-md-12 col-md-offset-3 brew" ng-click="setBeer()"><i class='fa fa-beer'></i> Brew</button>
+        </div>
       </div>
     </div>
   </div>

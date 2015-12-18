@@ -7,6 +7,7 @@ angular.module('movieBrewApp')
       templateUrl: 'views/beer.html',
       link: function(scope, element, attrs) {
         angular.element('div#beer-overlay').show();
+        angular.element('div#beer-details').hide();
         angular.element('div#gif').css({
           'background-image': BeerGifs.randomBeer()
         });
@@ -14,7 +15,7 @@ angular.module('movieBrewApp')
         element.fadeIn();
         $timeout(function() {
           angular.element('div#overlay-timeout').fadeOut(1500);
-          angular.element('div#beer-details').fadeIn(1500);
+          angular.element('div#beer-details').fadeIn(3000);
         }, 2500);
       }
     }

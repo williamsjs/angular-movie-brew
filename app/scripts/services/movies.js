@@ -5,7 +5,7 @@ angular.module('movieBrewApp')
 
     var path = 'http://omdbapi.com/?t=';
     var searchPath = 'http://omdbapi.com/?s='
-    var tomatoes = "&tomatoes=true"
+    var tomatoes = '&tomatoes=true'
 
     function validateYearFormat(year) {
       if (year.length !== 4) {

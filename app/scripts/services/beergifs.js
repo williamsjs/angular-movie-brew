@@ -9,7 +9,7 @@
  */
 angular.module('movieBrewApp')
   .service('BeerGifs', function () {
-    var beerGifs = ['stone_cold', 'chappelle_beer', 'bubbling_beer', 'drunk_dog', 'homer'];
+    var beerGifs = ['stone_cold', 'conan', 'beyonce', 'bubbling_beer', 'drunk_dog', 'homer'];
 
     this.randomBeer = function() {
       var beer = beerGifs[Math.floor(Math.random()*beerGifs.length)];
