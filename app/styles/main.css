@@ -24,7 +24,7 @@ button.brew {
   background: rgb(150, 34, 25);
   border: 2px solid #449d44;
   color: white;
-  width: 300px;
+  width: 150px;
 }
 
 button.search {
@@ -72,6 +72,7 @@ p.actors span, p.plot span {
 
 div#beer-details {
   background-repeat: no-repeat;
+  text-align: left;
   height: 70%;
   width: 95%;
   margin: auto;
@@ -80,6 +81,16 @@ div#beer-details {
   border: 3px solid black;
   border-radius: 5px;
   background-size: cover;
+  overflow: scroll;
+}
+
+div.beer-img {
+  text-align: center;
+}
+
+div#beer-details img {
+  width: 120px;
+  margin: auto;
 }
 
 .form-group input[type="text"] {
@@ -178,6 +189,10 @@ li {
     font-size: 30px;
   }
 
+  button.brew {
+    width: 300px;
+  }
+
   div#movie-card {
     border: 2px solid black;
   }
@@ -192,6 +207,11 @@ li {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
+  }
+
+  div#beer-details img {
+    width: 200px;
+    margin: auto;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
 

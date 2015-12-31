@@ -12,18 +12,19 @@
     </div>
   </div>
   <div id="beer-details">
-    <p>Beer</p>
-    <img src="{{brewery.brewery_label}}">
-    <ul>
-      <li>{{beer.beer_name}}</li>
-      <li>{{beer.beer_abv}}</li>
-      <li>{{beer.beer_description}}</li>
-      <li>{{beer.beer_style}}</li>
-    </ul>
-    <p>Brewery</p>
-    <ul>
-      <li>{{brewery.brewery_name}}</li>
-      <li>{{brewery.brewery_location.brewery_city}}, {{brewery.brewery_location.brewery_state}}</li>
-    </ul>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="card card-block">
+          <div class="beer-img">
+            <img src="{{brewery.brewery_label}}">
+            <h3 class="card-title">{{beer.beer_name}}</h3>
+          </div>
+          <p ng-show="beer.beer_abv" class="card-text"><strong>ABV:</strong> {{beer.beer_abv}}%</p>
+          <p ng-show="brewery.brewery_name" class="card-text"><strong>Brewery:</strong> {{brewery.brewery_name}}</p>
+          <p ng-show="brewery.location" class="card-text"><strong>Location:</strong> {{brewery.location.brewery_city}}, {{brewery.location.brewery_state}}</p>
+          <p ng-show="beer.beer_description" class="card-text"><strong>Description: </strong>{{beer.beer_description}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

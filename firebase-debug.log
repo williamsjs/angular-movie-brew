@@ -1,0 +1,17 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/4.2.1/bin/node /usr/local/bin/firebase deploy
+[debug] Platform:     darwin
+[debug] Node Version: v4.2.1
+[debug] Time:         Thu Dec 31 2015 13:51:02 GMT-0500 (EST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/movie-brew/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/movie-brew/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'movie-brew'...
+[info] 
+[info] i  deploying hosting
+[info] i  preparing app directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/movie-brew/uploads/-K6tNFOTWx77QrNHwLhJ?token=XXX&fileCount=367&message= 
