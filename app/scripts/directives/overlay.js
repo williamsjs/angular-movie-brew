@@ -6,7 +6,7 @@ angular.module('movieBrewApp')
       restrict: 'E',
       templateUrl: 'views/beer.html',
       link: function(scope, element) {
-        document.body.scrollTop = document.documentElement.scrollTop = 0; // scroll to top of page
+        window.scrollTo(0, 0); // scroll to top of page
         angular.element('div#beer-overlay').show();
         angular.element('div#beer-details').hide();
         angular.element('div#gif').css({
