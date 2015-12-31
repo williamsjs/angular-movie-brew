@@ -13,6 +13,6 @@ angular.module('movieBrewApp')
 
     this.randomBeer = function() {
       var beer = beerGifs[Math.floor(Math.random()*beerGifs.length)];
-      return 'url("../images/' + beer + '.gif")';
+      return 'url("images/' + beer + '.gif")';
     }
   });

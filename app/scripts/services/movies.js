@@ -1,17 +1,17 @@
-'use strict'
+'use strict';
 
 angular.module('movieBrewApp')
   .service('Movies', ['Restangular', function(Restangular) {
 
-    var path = 'http://omdbapi.com/?t=';
-    var searchPath = 'http://omdbapi.com/?s='
-    var tomatoes = '&tomatoes=true'
+    var path = 'https://omdbapi.com/?t=';
+    var searchPath = 'https://omdbapi.com/?s=';
+    var tomatoes = '&tomatoes=true';
 
     function validateYearFormat(year) {
       if (year.length !== 4) {
         return null;
       } else {
-        return "&y" + year;
+        return '&y' + year;
       }
     }
 
@@ -24,13 +24,13 @@ angular.module('movieBrewApp')
       return Restangular.oneUrl('movies', searchPath + title).get();
     };
 
-    this.filterMovies = function(list) {
+    this.filterMovies = function(list) { // exclude video games and shows... THIS IS 'MOVIE' BREW
       var newList = [];
       for (var i=0; i < list.length; i++) {
         if (list[i].Type === 'movie') {
           newList.push(list[i]);
         }
-      };
+      }
       return newList;
     };
 

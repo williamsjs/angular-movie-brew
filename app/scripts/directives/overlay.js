@@ -5,7 +5,7 @@ angular.module('movieBrewApp')
     return {
       restrict: 'E',
       templateUrl: 'views/beer.html',
-      link: function(scope, element, attrs) {
+      link: function(scope, element) {
         angular.element('div#beer-overlay').show();
         angular.element('div#beer-details').hide();
         angular.element('div#gif').css({
@@ -18,5 +18,5 @@ angular.module('movieBrewApp')
           angular.element('div#beer-details').fadeIn(3000);
         }, 2500);
       }
-    }
+    };
   }]);

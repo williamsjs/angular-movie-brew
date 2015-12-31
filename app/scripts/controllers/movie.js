@@ -10,19 +10,16 @@
 angular.module('movieBrewApp')
   .controller('MovieCtrl', ['$scope', '$timeout', 'Movies', 'Beers', function($scope, $timeout, Movies, Beers) {
 
-    $scope.movie = null;
-    $scope.movies = null;
-    $scope.beer = false;
-
     $scope.setBeer = function() {
       $scope.beer = Beers.brew($scope.movie.imdbRating).then(function(beers) {
-        $scope.beer = beers;
-        console.log(beers.response.beers[0].beer.beer_abv);
+        var beer = Beers.randomBeer(beers.response.beers.items);
+        $scope.beer = beer.beer; //confusing, I know
+        $scope.brewery = beer.brewery;
       });
     };
 
     $scope.exitBeer = function() {
-      $scope.beer = false
+      $scope.beer = '';
     };
 
     $scope.getMovie = function(title, year) {
@@ -33,14 +30,14 @@ angular.module('movieBrewApp')
       $scope.movies = null;
       $scope.movie = null;
       Movies.searchMovie($scope.titles).then(function(movies) {
-        if (movies.Search != undefined) {
+        if (movies.Search !== undefined) {
           var fullList = movies.Search;
           $scope.movies = Movies.filterMovies(fullList);
         } else {
-          $scope.movie = {Title: "No Movie Found"};
+          $scope.movie = {Title: 'No Movie Found'};
         }
       });
-    }
+    };
 
 
   }]);
