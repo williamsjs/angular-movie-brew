@@ -17,8 +17,8 @@
       <div id="movie-card">
         <h4 data-movie-fade-in="{{movie}}">{{movie.Title}} <span ng-if="movie.Year">({{movie.Year}})</h4>
         <div ng-if="movie.Year">
-          <p class="actors"><span>Actors: </span>{{movie.Actors}}</p>
-          <p class="plot"><span>Description: </span>{{movie.Plot}}</p>
+          <p class="actors"><strong>Actors: </strong><span class="movie">{{movie.Actors}}</span></p>
+          <p class="plot"><strong>Description: </strong><span class="movie">{{movie.Plot}}</span></p>
           <p>TomatoMeter Score: </p>
           <div class="progress">
             <div class="progress-bar progress-bar-striped tomato" role="progressbar" aria-valuenow="{{movie.tomatoMeter}}" aria-valuemin="0" aria-valuemax="{{movie.tomatoMeter}}" style="width: {{movie.tomatoMeter}}%;">

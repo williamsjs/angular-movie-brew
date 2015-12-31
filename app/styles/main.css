@@ -66,8 +66,8 @@ p.plot, p.actors {
   font-size: 17px;
 }
 
-p.actors span, p.plot span {
-  font-weight: bold;
+span.movie {
+  font-size: 12px;
 }
 
 div#beer-details {
@@ -212,6 +212,10 @@ li {
   div#beer-details img {
     width: 200px;
     margin: auto;
+  }
+
+  span.movie {
+    font-size: 18px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
 
